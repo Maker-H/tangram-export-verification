@@ -1,0 +1,15 @@
+env production "운영 환경" {
+ ns services "서비스" {
+ svc api "API 서버"
+ q queue "작업 큐"
+ job worker "워커"
+ }
+ db store "저장소"
+}
+ext client "사용자"
+reg images "이미지 저장소"
+client -> api : 요청
+api -> queue : 발행
+queue -> worker : 소비
+worker -> store : 기록
+worker -> images : 이미지 조회

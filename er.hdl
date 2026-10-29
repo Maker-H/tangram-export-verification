@@ -1,0 +1,11 @@
+table users "사용자" {
+ id bigint pk
+ email varchar(255) uk
+}
+table orders "주문" {
+ id bigint pk
+ user_id bigint fk
+ amount decimal(10,2)
+ note text null
+}
+orders.user_id -> users.id : 주문자

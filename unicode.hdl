@@ -1,0 +1,5 @@
+box special "한글 & <태그> \"따옴표\""
+svc multiline "첫째 줄\n둘째 줄"
+api gateway "입구 (A/B)"
+special -> multiline : 조건 & 확인
+multiline <-> gateway : 양방향

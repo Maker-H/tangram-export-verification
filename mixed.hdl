@@ -1,0 +1,16 @@
+direction down
+env local "개발 환경" {
+ script runner "run-service.sh" {
+ svc service "서비스"
+ }
+}
+env remote "원격 환경" {
+ table tasks "작업" {
+ id bigint pk
+ status varchar(20)
+ }
+ ext provider "외부 API"
+}
+service --> tasks : 저장
+service <--> provider : 요청/응답
+box note "독립 노드"

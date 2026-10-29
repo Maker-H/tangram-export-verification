@@ -1,0 +1,6 @@
+direction down
+svc api "고정 API" @40,40
+db store "고정 DB" @320,200
+q events "이벤트" @40,200
+api -> events : 발행
+api -> store : 저장
